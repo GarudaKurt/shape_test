@@ -32,7 +32,24 @@ pipeline {
                       ctest --test-dir build --output-on-failure
                   '''
             } 
-       }    
+        }
+        stage('For the fix branch') {
+             when { 
+               branch "fix-*"
+             }
+             steps {
+                echo 'Capture branch fix'
+             }  
+       }
+       stage('For PR') { 
+           when {
+               branch "PR-*"
+           }
+           steps {
+                echo 'For PR Branch only' 
+           }
+                
+       } 
     }
     post {
         success {
