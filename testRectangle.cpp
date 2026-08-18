@@ -14,7 +14,7 @@ void testArea() {
 void testPerimeter() { 
    int length = 10, width = 10;
    Rectangle rec(&length, &width);
-   assert(rec.GetPerimeter() == 100);
+   assert(rec.GetPerimeter() == 40);
    printf("Test is passed!\n");
 
 }

@@ -6,5 +6,5 @@ int Rectangle::GetArea() {
     return GetLength() * GetWidth();
 }
 int Rectangle::GetPerimeter() { 
-    return (2 * GetLength() + 2 * GetWidth());
+    return (2 * (GetLength()  + GetWidth()));
 }
