@@ -9,10 +9,13 @@ pipeline {
              }
         }
         stage('CompileMain') { 
-             echo 'Running main components'
-             sh '''
-               ./main
-              '''
+             steps { 
+                 echo 'Running main components'
+             
+	         sh '''
+                    ./main
+                  '''
+             }
         }
         stage('Build') {
            steps {
