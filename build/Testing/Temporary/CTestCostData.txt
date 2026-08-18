@@ -1,5 +1,3 @@
-SquareTest 0 0
-RectangleTest 0 0
+SquareTest 1 0.00165561
+RectangleTest 1 0.00163223
 ---
-SquareTest
-RectangleTest

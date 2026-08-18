@@ -1,18 +1,20 @@
-Start testing: Aug 18 14:08 +08
+Start testing: Aug 18 16:39 +08
 ----------------------------------------------------------
 1/2 Testing: SquareTest
 1/2 Test: SquareTest
 Command: "/home/aldren/workspace/build/testSquare"
 Directory: /home/aldren/workspace/build
-"SquareTest" start time: Aug 18 14:08 +08
+"SquareTest" start time: Aug 18 16:39 +08
 Output:
 ----------------------------------------------------------
-testSquare: /home/aldren/workspace/testSquare.cpp:16: void TestPerimeter(): Assertion `square.GetPerimeter() == 100' failed.
+Testing Square area
+Testing Square Perimeter
+All test is passed!
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Failed.
-"SquareTest" end time: Aug 18 14:08 +08
+Test Passed.
+"SquareTest" end time: Aug 18 16:39 +08
 "SquareTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
@@ -20,16 +22,19 @@ Test Failed.
 2/2 Test: RectangleTest
 Command: "/home/aldren/workspace/build/testRectangle"
 Directory: /home/aldren/workspace/build
-"RectangleTest" start time: Aug 18 14:08 +08
+"RectangleTest" start time: Aug 18 16:39 +08
 Output:
 ----------------------------------------------------------
-testRectangle: /home/aldren/workspace/testRectangle.cpp:17: void testPerimeter(): Assertion `rec.GetPerimeter() == 100' failed.
+Testing Rectangle Area
+Test is passed
+Test is passed!
+All Square is passed
 <end of output>
 Test time =   0.00 sec
 ----------------------------------------------------------
-Test Failed.
-"RectangleTest" end time: Aug 18 14:08 +08
+Test Passed.
+"RectangleTest" end time: Aug 18 16:39 +08
 "RectangleTest" time elapsed: 00:00:00
 ----------------------------------------------------------
 
-End testing: Aug 18 14:08 +08
+End testing: Aug 18 16:39 +08
