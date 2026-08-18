@@ -8,7 +8,12 @@ pipeline {
                  checkout scm 
              }
         }
-     
+        stage('CompileMain') { 
+             echo 'Running main components'
+             sh '''
+               ./main
+              '''
+        }
         stage('Build') {
            steps {
                sh ''' 
