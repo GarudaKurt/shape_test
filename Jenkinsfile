@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent { 
+        docker { image 'gcc:latest' }
+    }
     
     stages { 
     
@@ -14,7 +16,7 @@ pipeline {
                sh ''' 
                    rm -rf build
                    cmake -S . -B build
-                   cmake --build . build
+                   cmake --build build
                '''
            }
         }
