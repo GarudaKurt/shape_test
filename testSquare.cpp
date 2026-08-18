@@ -10,7 +10,7 @@ void TestArea() {
 }
 
 void TestPerimeter() { 
-   int length = 10, width = 10;
+   int length = 40, width = 10;
    Square square(&length, &width);
    printf("Testing Square Perimeter\n");
    assert(square.GetPerimeter() == 100);
