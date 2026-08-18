@@ -21,8 +21,7 @@ pipeline {
         stage('Unit Tests') { 
             steps {
                sh '''
-                      cd build
-                      ctest --output-on-failure
+                      ctest --test-dir build --output-on-failure
                   '''
             } 
        }    
