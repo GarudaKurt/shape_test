@@ -1,0 +1,6 @@
+/home/aldren/workspace/build/CMakeFiles/main.dir
+/home/aldren/workspace/build/CMakeFiles/testSquare.dir
+/home/aldren/workspace/build/CMakeFiles/testRectangle.dir
+/home/aldren/workspace/build/CMakeFiles/test.dir
+/home/aldren/workspace/build/CMakeFiles/edit_cache.dir
+/home/aldren/workspace/build/CMakeFiles/rebuild_cache.dir

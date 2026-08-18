@@ -1,26 +1,27 @@
-#include "testSquare.h"
-#include <assert.h>
+#include "Square.h"
 #include <cstdio>
+#include <cassert>
 
-TestSquare::TestSquare(int *area, int *perimeter){
-   _area = area;
-   _perimeter = perimeter;
+void TestArea() { 
+    int length = 10, width = 10;
+    Square square(&length, &width);
+    printf("Testing Square area\n");
+    assert(square.GetArea() == 100);
 }
 
-void TestSquare::PassFailArea() { 
-   printf("\n==================\n");
-   printf("Unit test for Square is running...\n");
-   printf("Test for area of square\n");
-   assert(*_area  > 50);
-   printf("Test is passed!\n");
+void TestPerimeter() { 
+   int length = 10, width = 10;
+   Square square(&length, &width);
+   printf("Testing Square Perimeter\n");
+   assert(square.GetPerimeter() == 100);
 }
 
-void TestSquare::PassFailPerimeter() { 
-  
-   printf("\n==================\n");
-   printf("Unit test for Square is running...\n");
-   printf("Test for perimeter of square\n");
-   assert(*_perimeter > 50);
-   printf("Test is passed!\n");
+
+int main() { 
+    TestArea();
+    TestPerimeter();
+    
+    printf("All test is passed!\n");
+    return 0;
 
 }

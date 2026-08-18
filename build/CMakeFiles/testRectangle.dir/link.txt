@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/testRectangle.dir/link.d CMakeFiles/testRectangle.dir/testRectangle.cpp.o CMakeFiles/testRectangle.dir/Shape.cpp.o CMakeFiles/testRectangle.dir/Rectangle.cpp.o -o testRectangle

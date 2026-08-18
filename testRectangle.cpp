@@ -1,27 +1,50 @@
 #include <cstdio>
 #include <cassert>
-#include "testRectangle.h"
+#include "Rectangle.h"
 
-TestRectangle::TestRectangle(int* area, int* perimeter) { 
-   _area = area;
-   _perimeter = perimeter;
-}
+void testArea() { 
+    int length = 10, width = 10;
 
-
-void TestRectangle::PassFailArea() { 
-    printf("\n====================\n");
-    printf("Unit test for Rectangle is running\n");
-    printf("Test for Area of Rectangle\n");
-    assert(*_area > 50);
+    Rectangle rec(&length, &width);
+    printf("Testing Rectangle Area\n");
+    assert(rec.GetArea() == 100);
     printf("Test is passed\n");
 }
 
-void TestRectangle::PassFailPerimeter() {
+void testPerimeter() { 
+   int length = 10, width = 10;
+   Rectangle rec(&length, &width);
+   assert(rec.GetPerimeter() == 100);
+   printf("Test is passed!\n");
 
-    printf("\n====================\n");
-    printf("Unit test for Rectangle is running\n");
-
-    printf("Test for Area of Rectangle\n");
-    assert(*_perimeter > 50);
-    printf("Test is passed!\n");
 }
+
+int main() { 
+
+   testArea();
+   testPerimeter();
+   printf("All Square is passed\n");
+   return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,5 @@
+SquareTest 0 0
+RectangleTest 0 0
+---
+SquareTest
+RectangleTest
