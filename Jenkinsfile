@@ -91,7 +91,7 @@ pipeline {
             }
             steps { 
                 echo 'Main branch triggered'
-            }
+           }
        }
     }
     post {
@@ -104,7 +104,7 @@ pipeline {
        always { 
            echo "Branch/PR: ${env.BRANCH_NAME}"
             script { 
-               if(enb.CHANGE_ID) { 
+               if(env.CHANGE_ID) { 
                 echo "Running validation for PR: ${env.CHANGE_ID}"
 
                 echo "Source branch: ${env.CHANGE_BRANCH}"
