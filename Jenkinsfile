@@ -8,6 +8,12 @@ pipeline {
                  checkout scm 
              }
         }
+        triggers { 
+            cron('H 0 * * *') 
+        }
+        environment {
+            CI = 'true'
+        }
         stage('CompileMain') { 
              steps { 
                  echo 'Running main components'
