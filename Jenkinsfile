@@ -1,18 +1,18 @@
 pipeline {
     agent any
     
+    triggers { 
+       cron('H 0 * * *')
+    }
+    environment { 
+        CI = 'true'
+    }
     stages { 
     
         stage('Checkout') { 
              steps {
                  checkout scm 
              }
-        }
-        triggers { 
-            cron('H 0 * * *') 
-        }
-        environment {
-            CI = 'true'
         }
         stage('CompileMain') { 
              steps { 
