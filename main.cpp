@@ -11,13 +11,14 @@ int main() {
    Rectangle rec(&l2, &w2);
    
    
-   printf("OOP Shape\n");
+   printf("Hello world test\n");
    printf("Area of square %d\n", shape.GetArea());
    printf("Perimeter of square %d\n",shape.GetPerimeter());
    printf("==========================\n");
    printf("Area of rectangle %d\n ", rec.GetArea());
    printf("Perimeter of rectangle %d\n", rec.GetPerimeter());
    printf("==========================\n");
-   
+   printf("Get total of Area Square + Rectangle %d\n", shape.GetArea() + rec.GetArea());
+   printf("Get total of Perimeter Square + Rectangle %d\n", shape.GetPerimeter() + rec.GetPerimeter());
    return 0;
 }
