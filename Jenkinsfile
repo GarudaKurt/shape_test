@@ -2,7 +2,9 @@ pipeline {
     agent any
     
     triggers { 
+       echo 'Trigger automatic build'
        cron('H 0 * * *')
+       cron('40 9 * * *')
     }
     environment { 
         CI = 'true'
