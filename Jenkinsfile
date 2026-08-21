@@ -2,7 +2,9 @@ pipeline {
     agent any
     
     triggers { 
+	   echo 'Daily trigger'
        cron('H 0 * * *')
+	   cron('42 9 * * *')
     }
     environment { 
         CI = 'true'
