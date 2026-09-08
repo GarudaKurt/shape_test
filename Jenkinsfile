@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'ShapeClasses-Machine' }
     
     triggers { 
         cron('36 10 * * *')
@@ -14,6 +14,20 @@ pipeline {
                  checkout scm 
              }
         }
+
+	stage('Check Agent') {
+	   steps {
+	       sh '''
+	           echo "==== Agent Information  ==== "
+		   echo "User: $(whoami)"
+		   echo "Hostname: $(hostname)"
+		   echo "OS:"
+		   cat /etc/os-release
+		   echo "Java Version"
+		   java --version
+	       '''
+	   }
+	}
         stage('CompileMain') { 
              when { 
                  branch "main"
