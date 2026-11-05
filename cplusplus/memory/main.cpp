@@ -26,7 +26,7 @@ int main() {
     emp2.id = 101;
     strcpy(emp2.name, "Alice");
     emp2.salary = 1500.50;
-    emp2.departmentId = static_cast<int>(Department::IT);
+    emp2.departmentId = static_cast<int>(Department::ACCOUNTING);
 
     memcpy(&emp1, &emp2, sizeof(Employee));
     printf("Emp1 Name after memcpy: %s\n",emp1.name);
