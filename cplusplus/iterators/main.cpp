@@ -2,7 +2,6 @@
 #include <vector>
 
 using namespace std;
-
 int main() { 
     int foo[] = {2, 4, 6, 8, 10};
     std::vector<int> bar;
