@@ -1,7 +1,7 @@
 #include <iostream>
 #include <memory>
 #include <vector>
-
+#include <stdlib.h>
 
 class Entity {
     public:
