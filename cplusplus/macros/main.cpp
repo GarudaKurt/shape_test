@@ -17,5 +17,6 @@ int main()
     PrintLogs("Stack trace logs %s\n%s\n",
              "[ERROR]: Uninitialize variable", 
 	     "[WARN] Missing declartions!");
+    printf("This is new test");
     return 0;
 }
