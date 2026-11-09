@@ -18,5 +18,6 @@ int main()
              "[ERROR]: Uninitialize variable", 
 	     "[WARN] Missing declartions!");
     printf("Hello World");
+    printf("This is new test");
     return 0;
 }
