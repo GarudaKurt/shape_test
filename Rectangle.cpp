@@ -1,5 +1,6 @@
 #include "Rectangle.h"
 #include <math.h>
+
 Rectangle::Rectangle(int *length, int *width) : Shape(length, width){};
 
 int Rectangle::GetArea() {
