@@ -1,5 +1,5 @@
 #include "Square.h"
-
+#include <cstdio>
 
 Square::Square(int *length, int *width) : Shape (length, width) {}
 
