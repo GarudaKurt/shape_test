@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'ShapeClasses-Machine' }
+    agent { label 'Dokcerize' }
     
     triggers { 
         cron('36 10 * * *')
