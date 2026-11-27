@@ -10,7 +10,7 @@ int main() {
    Square shape(&l1, &w1);
    Rectangle rec(&l2, &w2);
    
-   
+   printf("Hello Wolrd"); 
    printf("Hello world test\n");
    printf("Area of square %d\n", shape.GetArea());
    printf("Perimeter of square %d\n",shape.GetPerimeter());
