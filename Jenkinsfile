@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'ShapeClasses-Machine' }
+    agent { label 'Dockerize' }
     
     triggers { 
         cron('36 10 * * *')
@@ -15,46 +15,33 @@ pipeline {
              }
         }
 
-	stage('Check Agent') {
-	   steps {
-	       sh '''
-	           echo "==== Agent Information  ==== "
-		   echo "User: $(whoami)"
-		   echo "Hostname: $(hostname)"
-		   echo "OS:"
-		   cat /etc/os-release
-		   echo "Java Version"
-		   java --version
-	       '''
-	   }
-	}
-        stage('CompileMain') { 
-             when { 
-                 branch "main"
-             }
-             steps { 
-                 echo 'Running main components'
-             
-	         sh '''
-                    ./main
-                  '''
-             }
-        }
-        stage('Build') {
-           steps {
-               sh ''' 
-                   rm -rf build
-                   cmake -S . -B build
-                   cmake --build build
-               '''
-           }
-        }
-        stage('Unit Tests') { 
+        stage('Prepare') {
             steps {
-               sh '''
-                      ctest --test-dir build --output-on-failure
-                  '''
-            } 
+                script {
+                    // unique per branch and build; characters such as / are not allowed in tags
+                    env.IMAGE = 'shapeclass:' + env.BUILD_TAG.replaceAll('[^A-Za-z0-9_.-]', '-')
+                }
+                sh 'docker version'
+            }
+        }
+        stage('Build and Unit Tests') {
+            steps {
+                sh 'docker build --progress=plain --target test --no-cache-filter test .'
+            }
+        }
+        stage('Build Runtime Image') {
+            steps {
+                sh 'docker build --target runtime -t "$IMAGE" .'
+            }
+        }
+        stage('Run main') {
+            when {
+                branch 'main'
+            }
+            steps {
+                sh 'docker run --rm "$IMAGE"'
+                sh 'docker tag "$IMAGE" shapeclass:latest'
+            }
         }
         stage('For the fix branch') {
              when { 
@@ -116,6 +103,7 @@ pipeline {
              echo 'Build or unit test failed!' 
        }
        always { 
+           sh 'if [ -n "$IMAGE" ]; then docker image rm "$IMAGE" || true; fi'
            echo "Branch/PR: ${env.BRANCH_NAME}"
             script { 
                if(env.CHANGE_ID) { 
