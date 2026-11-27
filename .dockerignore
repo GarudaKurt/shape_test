@@ -1,0 +1,10 @@
+.git
+build/
+Testing/
+main
+testSquare
+testRectangle
+core.*
+Jenkinsfile*
+Dockerfile
+.dockerignore

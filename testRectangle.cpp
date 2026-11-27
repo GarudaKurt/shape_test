@@ -16,6 +16,7 @@ void testPerimeter() {
    Rectangle rec(&length, &width);
    assert(rec.GetPerimeter() == 40);
    printf("Test is passed!\n");
+   printf("Hello World");
 
 }
 
