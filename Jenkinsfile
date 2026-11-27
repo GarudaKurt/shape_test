@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'Dokcerize' }
+    agent { label 'Dockerize' }
     
     triggers { 
         cron('36 10 * * *')
