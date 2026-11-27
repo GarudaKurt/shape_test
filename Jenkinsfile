@@ -36,6 +36,7 @@ pipeline {
         }
         stage('Run main') {
             when {
+                echo 'Running main'
                 branch 'main'
             }
             steps {
